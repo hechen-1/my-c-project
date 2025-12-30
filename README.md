@@ -1,1 +1,18 @@
 # my-c-project
+- 数据类型 byte short int long float double char 
+- 运算符 
+  - 算术运算（+ , - , * , /, ++, --）
+  - 比较运算(> , < , == , !=) 
+  - 逻辑运算(&& , || , !) 
+  - 位运算(&按位与 , |按位或 , ^按位异或 , ~按位取反) ( << , >> ) 
+- main函数
+- stdio.h库/printf函数
+- 条件语句 if/else switch/case/break/continue/return
+- 循环语句 for do/while while/do  
+- 数组 多维数组
+- 函数 （入参和返回值）先申明，再定义，后调用
+- 结构体 struct 先定义，再实例化，后赋值操作
+- 字符数组操作 char str[];
+- typedef 类型别名
+- union 共用结构体  先定义，再实例化
+- enums 枚举
