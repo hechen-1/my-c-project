@@ -10,7 +10,7 @@
  * 
  * 
  */
-
+#pragma execution_character_set("utf-8")
 #include <stdio.h>
 #include <string.h>
 
@@ -37,6 +37,8 @@ void main()
     printf("age => %d\n", s1.age);
     printf("name => %s\n", s1.name);
     printf("salary => %.2f\n", s1.salary);
+    printf("你好世界\n");
+    fflush(stdout);
     testStrApi();
 }
 
