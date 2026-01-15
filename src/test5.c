@@ -26,6 +26,20 @@
  #include <time.h>
  #include <math.h>
 
+
+ #define CHECK_TYPE(x)\
+    do{\
+        printf("%s", #x);\
+        if(sizeof(x) == sizeof(int)){\
+            printf(" is int\n");\
+        }else if(sizeof(x) == sizeof(double)){\
+            printf(" is double\n");\
+        }else{\
+            printf(" is other type\n");\
+        }\
+    }while(0)
+
+
  int main(){
 
     //获取当前系统时间 并格式化输出 YYYY-MM-DD HH:MM:SS
@@ -50,6 +64,12 @@
     double pow_num = pow(num, 2);
     printf("Square root of %.2f is %.2f\n", num, sqrt_num);
     printf("%.2f raised to the power of 2 is %.2f\n", num, pow_num);
+
+    printf("0.1 + 0.2 = %f\n",0.1+0.2);
+    int arr[2] ={1,3};
+    printf("Size of array: %zu bytes\n", sizeof(arr));
     
+    CHECK_TYPE(12);
+    CHECK_TYPE(12.3);
     return 0;
  }
