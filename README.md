@@ -1,4 +1,6 @@
 # my-c-project
+- 编译运行命令
+  - ``` gcc src/test8.c -o test.exe -lws2_32```
 - 数据类型 byte short int long float double char 
 - 运算符 
   - 算术运算（+ , - , * , /, ++, --）

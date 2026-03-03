@@ -72,9 +72,23 @@ int main(){
         if (n > 0) {
             buffer[n] = '\0';
             printf("received message: %s\n", buffer);
-            const char *response = "hello client!";
-            send(clientSock, response, (int)strlen(response), 0);
-            printf("response sent to client\n");
+            const char *body = "hello client!";
+            char http_response[BUFFER_SIZE];
+            int body_len = (int)strlen(body);
+            int resp_len = snprintf(http_response, sizeof(http_response),
+                "HTTP/1.1 200 OK\r\n"
+                "Content-Type: text/plain; charset=utf-8\r\n"
+                "Content-Length: %d\r\n"
+                "Connection: close\r\n"
+                "\r\n"
+                "%s",
+                body_len, body);
+            if (resp_len > 0) {
+                send(clientSock, http_response, resp_len, 0);
+                printf("HTTP response sent to client\n");
+            } else {
+                printf("failed to format HTTP response\n");
+            }
         } else if (n == 0) {
             printf("client disconnected\n");
         } else {
