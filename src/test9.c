@@ -14,22 +14,31 @@ int main()
 
     int a = 1;
     int *p = &a;
-    P_NAME *p1 = &test1;
 
-    test1();
+    P_NAME *p1 = &test1;
     (*p1)();
+    p1();
+
+    P_NAME *p2 = test1;
+    (*p2)();
+    p2();
+
+    //不用别名
+    void(*p3)() = &test1;
+    p3();
 
     return 0;
-}
-
-int *test()
-{
-    int a = 2;
-    int *p = &a;
-    return p;
 }
 
 void test1()
 {
     printf("===test1\n");
+}
+
+//函数指针
+int *test()
+{
+    int a = 2;
+    int *p = &a;
+    return p;
 }

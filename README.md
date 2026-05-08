@@ -30,3 +30,7 @@
 - 申请内存地址 malloc/calloc
   - ``` int*p = (int*)calloc(sizeof(int),2); ``` 
 - 内存动态扩容 
+  - 动态数组
+- 指针数组
+- 指针函数
+-    
